@@ -2,17 +2,27 @@ import numpy as np
 
 
 a = np.array([1, 2, 3, 4, 5])
-print(a)
-
-# fanci indexing
-b = [1,2,3]
-print(a[b])
 
 
-c  =np.argwhere(a%2==0).flatten() # indexing
-print(c) # indexing
+# createing and rearange
 
-print(f'argwhere  {a[c]}')
+b = np.arange( 1,11 )
+print(b)
+print(b.shape)
 
+# reshaping
 
-print(f'other way { a[a%2==0] }')
+c = b.reshape((2,5))
+print(c)
+print(c.shape)
+
+# another shape
+d = b.reshape((5,2))
+print(d)
+print(d.shape)
+
+# list of list
+
+e = b[np.newaxis , :]
+print(e)
+print(e.shape)
