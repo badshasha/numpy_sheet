@@ -1,25 +1,23 @@
 import numpy as np
 
 
-a = np.array([1,2])
-print(a.shape)
-
-a = np.array( [[1,2,4,5], [3,4,1,2]] )
-print(a.shape)  # (2,2)  row , column
+a = np.array([[1,2],[3,4],[6,7]])
+print( f'origianl np array \n {a}' )
 
 
-# 1 row 1 column
-print( a[0][0] )
-print( a[0,0] )
+# user booliean
+bool_array = a >= 2  # RETURN THE BOOLEAN ARRAY
+print( bool_array )
 
-print( a[:,0] )
-print( a[0,:] )
+# another way ==> (1)
+print( a[a>2] )
 
-
-
-# more slicing
-print( a[0,1:3] )  # start inedx 1 and end 2
+# another way2 ==> (2)
+print( a[bool_array] )
 
 
+# TAKE ARRAY WISAME SAME SIZE
 
-print(  a[-1,-1] )  # start last row and last coulumd 
+b = np.where( a > 2 , a , -1 )  # meaning is the boolean true vlaue get from a
+                                # if it's fales then value should be -1
+print(b)
